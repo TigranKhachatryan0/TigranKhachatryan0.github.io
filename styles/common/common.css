@@ -82,7 +82,7 @@ header button {
     border: 0.25rem solid #fff;
     border-radius: 1rem;
 
-/*     cursor: pointer; */
+    cursor: pointer;
 
     padding: 0.5em 1em;
     transition: 0.25s all ease;
