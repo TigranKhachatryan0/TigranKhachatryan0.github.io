@@ -38,7 +38,7 @@ class Theming {
         console.debug("Theming >> Theming.constructor >> Disabling transitions temporarily\n" +
                       "                                  in order to apply changes instantly...");
         
-        document.querySelectorAll("*:not(#header_buttons)").forEach(function(element) {
+        document.querySelectorAll("*:not(#header_buttons):not(#header_buttons button)").forEach(function(element) {
             element.classList.add("no_transition");
         });
 
@@ -48,7 +48,7 @@ class Theming {
 
         console.debug("Theming >> Theming.constructor >> Reverting transition changes...");
         setTimeout(function() {
-            document.querySelectorAll("*:not(#header_buttons)").forEach(function(element) {
+            document.querySelectorAll("*:not(#header_buttons):not(#header_buttons button)").forEach(function(element) {
                 element.classList.remove("no_transition");
 
                 if (element.classList.length == 0) {
@@ -68,14 +68,14 @@ class Theming {
             if (label.innerHTML == "ԱՐԵՒ") {
                 label.innerHTML = "ԱՍՏՂ";
                 icon.innerHTML = "star";
-                document.querySelectorAll("*:not(#header_buttons)").forEach(function(element) {
+                document.querySelectorAll("*:not(#header_buttons):not(#header_buttons button)").forEach(function(element) {
                     element.classList.add("no_transition");
                 });
                 
                 parent_this.setThemeCSS("styles/" + base + "/dark_theme.css");
 
                 setTimeout(function() {
-                    document.querySelectorAll("*:not(#header_buttons)").forEach(function(element) {
+                    document.querySelectorAll("*:not(#header_buttons):not(#header_buttons button)").forEach(function(element) {
                         element.classList.remove("no_transition");
 
                         if (element.classList.length == 0) {
@@ -89,14 +89,14 @@ class Theming {
                 label.innerHTML = "ԱՐԵՒ";
                 icon.innerHTML = "light_mode";
 
-                document.querySelectorAll("*:not(#header_buttons)").forEach(function(element) {
+                document.querySelectorAll("*:not(#header_buttons):not(#header_buttons button)").forEach(function(element) {
                     element.classList.add("no_transition");
                 });
                 
                 parent_this.setThemeCSS("styles/" + base + "/light_theme.css");
 
                 setTimeout(function() {
-                    document.querySelectorAll("*:not(#header_buttons)").forEach(function(element) {
+                    document.querySelectorAll("*:not(#header_buttons):not(#header_buttons button)").forEach(function(element) {
                         element.classList.remove("no_transition");
 
                         if (element.classList.length == 0) {
