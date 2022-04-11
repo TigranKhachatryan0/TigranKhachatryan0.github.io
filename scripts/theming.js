@@ -55,7 +55,7 @@ class Theming {
                     element.removeAttribute("class");
                 }
             });
-        }, 500);
+        }, 0.5);
 
         // Dark/Light theme toggle button
         const parent_this = this;
@@ -82,7 +82,7 @@ class Theming {
                             element.removeAttribute("class");
                         }
                     });
-                }, 500);
+                }, 0.5);
 
                 console.debug("Theming >> theme_button(event:click) >> Switched to dark mode!");
             } else {
