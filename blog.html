@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>${ARTICLE_TITLE} ― ${BLOG_NAME}</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="${ARTICLE_DESCRIPTION}">
+        <meta name="keywords" content="${ARTICLE_KEYWORDS}">
+        <meta name="author" content="${ARTICLE_AUTHOR}">
+        <meta name="application-name" content="${BLOG_NAME}">
+
+        <link rel="stylesheet" href="styles/common/common.css">
+        <link rel="stylesheet" href="styles/blog/light_theme.css">
+        <link rel="stylesheet" href="styles/blog/common.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    </head>
+
+    <body>
+        
+        <header>
+            <div>
+                <h1>${BLOG_NAME}</h1>
+
+                <div id="header_buttons">
+                    <button id="home_button" onclick="window.location.href = 'main.html';">
+                        <span class="material-icons" style="font-size: 1em; margin-right: 0.25em;">home</span>
+                        <span>ԳԼԽԱՎՈՐ ԷՋ</span>
+                    </button>
+
+                    <button id="subscribe_button">
+                        <span class="material-icons" style="font-size: 1em; margin-right: 0.25em;">notifications</span>
+                        <span>ԲԱԺԱՆՈՐԴԱԳՐՎԵԼ</span>
+                    </button>
+
+                    <button id="theme_button">
+                        <span class="material-icons" style="font-size: 1em; margin-right: 0.25em;">light_mode</span>
+                        <span>ԱՐԵՒ</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <i>${BLOG_SUBTITLE}</i>
+            <hr>
+
+            <article>
+                <h2>${ARTICLE_TITLE}</h2>
+                <div id="article_info">
+                    <author>${ARTICLE_AUTHOR}</author>
+                    <published_at>${ARTICLE_DATE}</published_at>
+                </div>
+                <p>${ARTICLE_CONTENT}</p>
+                <p>Հարցերի դեպքում կարող եք ինձ հետ կապ հաստատել <a href="#">այստեղ</a></p>
+            </article>
+        </main>
+
+    </body>
+
+    <script src="scripts/main_page/theming.js"></script>
+</html>

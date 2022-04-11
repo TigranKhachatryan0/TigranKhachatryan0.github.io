@@ -1,0 +1,145 @@
+/*** General *******************************************************************/
+
+body, html {
+    /* Remove body margin/padding */
+    /* This is done in order to make the top panel fill the entire window */
+
+    margin:  0;
+    padding: 0;
+}
+
+body {
+    transition: 0.5s background-color ease-in-out;
+}
+
+* {
+    /* Set defaults which apply to all elements */
+
+    /* Font family */
+    font-family: "Mardoto", "Roboto", "DejaVu Sans", "Arial Armenian", "Arial", sans-serif;
+    transition: 0.5s color ease-in-out;
+}
+
+*:focus {
+    /* Set common focus style for all elements */
+
+    /* Disable outline */
+    outline: none;
+}
+
+
+.no_transition {
+    /* Disable transitions for elements with this class */
+
+    transition: none !important;
+}
+
+/*** Header *******************************************************************/
+
+header {
+    display: table;
+    position: sticky;
+
+    height: 40vh;
+    width: 100%;
+
+    background: url(../../assets/images/header_bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    color: #fff !important;
+    text-align: left;
+    font-size: 2em;
+
+    user-select: none;
+
+    transition: 0.5s height ease;
+}
+
+header > * {
+    display: table-cell;
+    vertical-align: bottom;
+
+    padding: 1em 1em;
+}
+
+
+header h1 {
+    margin-bottom: 0;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+
+header button {
+    background: none;
+    color: #fff;
+    font-size: 0.5em;
+    
+    border: 0.25rem solid #fff;
+    border-radius: 1rem;
+
+    cursor: pointer;
+
+    padding: 0.5em 1em;
+    transition: 0.25s all ease;
+}
+
+header button:hover {
+    background: #fff;
+    color: #000;
+
+    box-shadow: 0 0 0.5rem 0.25rem #ffffff50;
+}
+
+header button:active {
+    background: #ec407a;
+    color: #000;
+
+    border: 0.25rem solid #ec407a;
+    border-radius: 0.5rem;
+
+    box-shadow: 0 0 0.5rem 0.25rem #00000050;
+}
+
+
+header #subscribe_button {
+    animation: subscribe_button_animation;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-direction: reverse;
+}
+
+/*** Main *********************************************************************/
+
+main {
+    animation: fade_in;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+
+    padding: 1em;
+}
+
+/*** Animations *******************************************************************/
+
+@keyframes subscribe_button_animation {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(0.25em, 0.25em);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes fade_in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

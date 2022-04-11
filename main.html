@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>${BLOG_NAME}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="${AUTHOR}">
+        <meta name="description" content="${DESCRIPTION}">
+        <meta name="keywords" content="${KEYWORDS}">
+
+        <link rel="stylesheet" href="styles/common/common.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    </head>
+
+    <body>
+
+        <header>
+            <div> <!-- Usage of div makes the following look like a whole element to the CSS -->
+                <h1>${BLOG_NAME}</h1>
+                
+                <div id="header_buttons">
+                    <button id="subscribe_button">
+                        <span class="material-icons" style="font-size: 1em; margin-right: 0.25em;">notifications</span>
+                        <span>ԲԱԺԱՆՈՐԴԱԳՐՎԵԼ</span>
+                    </button>
+
+                    <button id="theme_button">
+                        <span class="material-icons" style="font-size: 1em; margin-right: 0.25em;">light_mode</span>
+                        <span>ԱՐԵՒ</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <i>${BLOG_SUBTITLE}</i>
+            <hr>
+
+            <section class="article_preview">
+                <h3>${ARTICLE_TITLES[0]}</h3>
+                <p>${ARTICLE_PREVIEWS[0]}</p>
+            </section>
+
+            <section class="article_preview">
+                <img src="../dev/header.jpg~" alt="">
+                <h3>${ARTICLE_TITLES[1]}</h3>
+                <p>${ARTICLE_PREVIEWS[1]}</p>
+            </section>
+
+            <section class="article_preview">
+                <h3>${ARTICLE_TITLES[2]}</h3>
+                <p>${ARTICLE_PREVIEWS[2]}</p>
+            </section>
+
+            <section class="article_preview">
+                <h3>${ARTICLE_TITLES[3]}</h3>
+                <p>${ARTICLE_PREVIEWS[3]}</p>
+            </section>
+
+            <section class="article_preview">
+                <h3>${ARTICLE_TITLES[4]}</h3>
+                <p>${ARTICLE_PREVIEWS[4]}</p>
+            </section>
+
+            <section class="article_preview">
+                <h3>${ARTICLE_TITLES[5]}</h3>
+                <p>${ARTICLE_PREVIEWS[5]}</p>
+            </section>
+        </main>
+
+    </body>
+
+    <script src="scripts/theming.js"></script>
+    <script src="scripts/main_page/theming.js"></script>
+    <script>
+        const subscribe_button = document.getElementById("subscribe_button");
+
+        subscribe_button.addEventListener("click", function() {
+            alert("<դեռ իրականացված չէ>");
+        });
+
+        window.addEventListener("scroll", function() {
+            const scrollY = window.scrollY;
+            const scrollY_vh = scrollY / window.innerHeight * 100;
+
+            const header = document.querySelector("header");
+            const header_h1 = header.querySelector("h1");
+            const header_buttons = document.querySelector("#header_buttons");
+
+            if (scrollY_vh != 0) {
+                if (theming.is_dark_mode()) {
+                    header.style.boxShadow = "0 0 1em rgba(51, 51, 51, 0.75)";
+                } else {
+                    header.style.boxShadow = "0 0 1em rgba(0, 0, 0, 0.75)";
+                }
+            } else {
+                header.style.boxShadow = "none";
+            }
+
+            if (scrollY_vh <= 40 + (header.style.display == "none" ? 0 : header.offsetHeight)) {
+                header.style.display = "table";
+                header.classList.add("no_transition");
+                setTimeout(function() {
+                    header.classList.remove("no_transition");
+                }, 1);
+
+                header_h1.style.fontSize = "calc(2em - " + scrollY_vh / 40 + "em)";
+                header_buttons.style.opacity = 1 - scrollY_vh / 40;
+
+                if (header_buttons.style.opacity <= 0) {
+                    header_buttons.style.display = "none";
+                } else {
+                    header_buttons.style.display = "initial";
+                }
+            }
+        });
+    </script>
+</html>

@@ -1,0 +1,164 @@
+/*** General *******************************************************************/
+
+body, html {
+    /* Remove body margin/padding */
+    /* This is done in order to make the top panel fill the entire window */
+
+    margin:  0;
+    padding: 0;
+}
+
+body {
+    transition: 0.5s background-color ease-in-out;
+}
+
+* {
+    /* Set defaults which apply to all elements */
+
+    /* Font family */
+    font-family: "Mardoto", "Roboto", "DejaVu Sans", "Arial Armenian", "Arial", sans-serif;
+    transition: 0.5s color ease-in-out;
+}
+
+*:focus {
+    /* Set common focus style for all elements */
+
+    /* Disable outline */
+    outline: none;
+}
+
+/*** Header *******************************************************************/
+
+header {
+    display: table;
+    position: sticky;
+
+    height: 40vh;
+    width: 100%;
+
+    background: url(../../assets/images/header_bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    color: #fff !important;
+    text-align: left;
+    font-size: 2em;
+
+    user-select: none;
+
+    transition: 0.5s height ease;
+}
+
+header > * {
+    display: table-cell;
+    vertical-align: bottom;
+
+    padding: 1em 1em;
+}
+
+
+header h1 {
+    margin-bottom: 0;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+
+header button {
+    background: none;
+    color: #fff;
+    font-size: 0.5em;
+    
+    border: 0.25rem solid #fff;
+    border-radius: 1rem;
+
+    cursor: pointer;
+
+    padding: 0.5em 1em;
+    transition: 0.25s all ease;
+}
+
+header button:hover {
+    background: #fff;
+    color: #000;
+
+    box-shadow: 0 0 0.5rem 0.25rem #ffffff50;
+}
+
+header button:active {
+    background: #ec407a;
+    color: #000;
+
+    border: 0.25rem solid #ec407a;
+    border-radius: 0.5rem;
+
+    box-shadow: 0 0 0.5rem 0.25rem #00000050;
+}
+
+
+header #subscribe_button {
+    animation: subscribe_button_animation;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-direction: reverse;
+}
+
+/*** Main *********************************************************************/
+
+main {
+    animation: fade_in;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+
+    padding: 1em;
+}
+
+/*** Links *******************************************************************/
+
+a {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0)      0%, rgba(0, 0, 0, 0)     25%,
+                                        blueviolet         25.1%, blueviolet           50%,
+                                        rgb(111, 219, 255) 50.1%, rgb(111, 219, 255)  100%);
+    
+    background-size: 100% 400%;
+
+    text-decoration: none;
+
+    transition: 0.5s all ease;
+}
+
+a:link {
+    background-position: 0% 0%;
+    color: blueviolet;
+}
+
+a:visited {
+    color: darkslateblue;
+}
+
+a:hover {
+    background-position: 0 33.3333%;
+    color: white;
+}
+
+a:active {
+    background-position: 0 66.6666%;
+    color: black;
+}
+
+/*** Article Info *************************************************************/
+
+#article_info > * {
+    display: block;
+}
+
+#article_info author::before {
+    content: url(../../assets/images/icons/author.svg);
+    display: inline-block;
+}
+
+#article_info published_at::before {
+    content: url(../../assets/images/icons/published_at.svg);
+    display: inline-block;
+}
