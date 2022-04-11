@@ -48,7 +48,7 @@ class Theming {
 
         console.debug("Theming >> Theming.constructor >> Reverting transition changes...");
         setTimeout(function() {
-            document.querySelectorAll("*").forEach(function(element) {
+            document.querySelectorAll("*:not(#header_buttons button)").forEach(function(element) {
                 element.classList.remove("no_transition");
 
                 if (element.classList.length == 0) {
@@ -75,7 +75,7 @@ class Theming {
                 parent_this.setThemeCSS("styles/" + base + "/dark_theme.css");
 
                 setTimeout(function() {
-                    document.querySelectorAll("*").forEach(function(element) {
+                    document.querySelectorAll("*:not(#header_buttons button)").forEach(function(element) {
                         element.classList.remove("no_transition");
 
                         if (element.classList.length == 0) {
@@ -96,7 +96,7 @@ class Theming {
                 parent_this.setThemeCSS("styles/" + base + "/light_theme.css");
 
                 setTimeout(function() {
-                    document.querySelectorAll("*").forEach(function(element) {
+                    document.querySelectorAll("*:not(#header_buttons button)").forEach(function(element) {
                         element.classList.remove("no_transition");
 
                         if (element.classList.length == 0) {
