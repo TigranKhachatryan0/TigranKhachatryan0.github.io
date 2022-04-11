@@ -25,6 +25,8 @@ body {
 
     /* Disable outline */
     outline: none;
+    /* ... and highlight */
+    -webkit-tap-highlight-color: transparent;
 }
 
 
