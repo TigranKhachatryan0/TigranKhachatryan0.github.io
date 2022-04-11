@@ -55,7 +55,7 @@ class Theming {
                     element.removeAttribute("class");
                 }
             });
-        }, 1); // 1 millisecond is enough to stop the transitions
+        }, 500);
 
         // Dark/Light theme toggle button
         const parent_this = this;
