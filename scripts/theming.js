@@ -68,12 +68,42 @@ class Theming {
             if (label.innerHTML == "ԱՐԵՒ") {
                 label.innerHTML = "ԱՍՏՂ";
                 icon.innerHTML = "star";
+                document.querySelectorAll("*").forEach(function(element) {
+                    element.classList.add("no_transition");
+                });
+                
                 parent_this.setThemeCSS("styles/" + base + "/dark_theme.css");
+
+                setTimeout(function() {
+                    document.querySelectorAll("*").forEach(function(element) {
+                        element.classList.remove("no_transition");
+
+                        if (element.classList.length == 0) {
+                            element.removeAttribute("class");
+                        }
+                    });
+                }, 500);
+
                 console.debug("Theming >> theme_button(event:click) >> Switched to dark mode!");
             } else {
                 label.innerHTML = "ԱՐԵՒ";
                 icon.innerHTML = "light_mode";
+
+                document.querySelectorAll("*").forEach(function(element) {
+                    element.classList.add("no_transition");
+                });
+                
                 parent_this.setThemeCSS("styles/" + base + "/light_theme.css");
+
+                setTimeout(function() {
+                    document.querySelectorAll("*").forEach(function(element) {
+                        element.classList.remove("no_transition");
+
+                        if (element.classList.length == 0) {
+                            element.removeAttribute("class");
+                        }
+                    });
+                }, 500);
                 console.debug("Theming >> theme_button(event:click) >> Switched to light mode!");
             }
         });
