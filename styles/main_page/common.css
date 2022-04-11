@@ -10,7 +10,7 @@
     transition: 0.25s all ease;
     user-select: none;
 
-/*     cursor: pointer; */
+    cursor: pointer;
 }
 
 .article_preview:hover {
