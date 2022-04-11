@@ -27,7 +27,7 @@ body {
     outline: none;
     /* ... and highlight */
     -webkit-tap-highlight-color: transparent;
-    tap-highlight-color: transparent;
+    -webkit-user-select: none;
 }
 
 
