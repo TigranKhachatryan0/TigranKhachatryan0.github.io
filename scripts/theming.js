@@ -38,7 +38,7 @@ class Theming {
         console.debug("Theming >> Theming.constructor >> Disabling transitions temporarily\n" +
                       "                                  in order to apply changes instantly...");
         
-        document.querySelectorAll("*").forEach(function(element) {
+        document.querySelectorAll("*:not(#header_buttons)").forEach(function(element) {
             element.classList.add("no_transition");
         });
 
@@ -48,14 +48,14 @@ class Theming {
 
         console.debug("Theming >> Theming.constructor >> Reverting transition changes...");
         setTimeout(function() {
-            document.querySelectorAll("*:not(#header_buttons button)").forEach(function(element) {
+            document.querySelectorAll("*:not(#header_buttons)").forEach(function(element) {
                 element.classList.remove("no_transition");
 
                 if (element.classList.length == 0) {
                     element.removeAttribute("class");
                 }
             });
-        }, 0.5);
+        }, 500);
 
         // Dark/Light theme toggle button
         const parent_this = this;
@@ -68,35 +68,35 @@ class Theming {
             if (label.innerHTML == "ԱՐԵՒ") {
                 label.innerHTML = "ԱՍՏՂ";
                 icon.innerHTML = "star";
-                document.querySelectorAll("*").forEach(function(element) {
+                document.querySelectorAll("*:not(#header_buttons)").forEach(function(element) {
                     element.classList.add("no_transition");
                 });
                 
                 parent_this.setThemeCSS("styles/" + base + "/dark_theme.css");
 
                 setTimeout(function() {
-                    document.querySelectorAll("*:not(#header_buttons button)").forEach(function(element) {
+                    document.querySelectorAll("*:not(#header_buttons)").forEach(function(element) {
                         element.classList.remove("no_transition");
 
                         if (element.classList.length == 0) {
                             element.removeAttribute("class");
                         }
                     });
-                }, 0.5);
+                }, 500);
 
                 console.debug("Theming >> theme_button(event:click) >> Switched to dark mode!");
             } else {
                 label.innerHTML = "ԱՐԵՒ";
                 icon.innerHTML = "light_mode";
 
-                document.querySelectorAll("*").forEach(function(element) {
+                document.querySelectorAll("*:not(#header_buttons)").forEach(function(element) {
                     element.classList.add("no_transition");
                 });
                 
                 parent_this.setThemeCSS("styles/" + base + "/light_theme.css");
 
                 setTimeout(function() {
-                    document.querySelectorAll("*:not(#header_buttons button)").forEach(function(element) {
+                    document.querySelectorAll("*:not(#header_buttons)").forEach(function(element) {
                         element.classList.remove("no_transition");
 
                         if (element.classList.length == 0) {
