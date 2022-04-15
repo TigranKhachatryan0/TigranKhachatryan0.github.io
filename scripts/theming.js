@@ -38,7 +38,7 @@ class Theming {
         console.debug("Theming >> Theming.constructor >> Disabling transitions temporarily\n" +
                       "                                  in order to apply changes instantly...");
         
-        document.querySelectorAll("*:not(#header_buttons):not(#header_buttons button)").forEach(function(element) {
+        document.querySelectorAll("*:not(header > *)").forEach(function(element) {
             element.classList.add("no_transition");
         });
 
