@@ -17,7 +17,7 @@ body {
 
     /* Font family */
     font-family: "Mardoto", "Roboto", "DejaVu Sans", "Arial Armenian", "Arial", sans-serif;
-    transition: 0.5s color ease-in-out;
+    transition: 0.5s color linear;
     -webkit-tap-highlight-color: transparent;
 }
 
