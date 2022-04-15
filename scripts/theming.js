@@ -48,7 +48,7 @@ class Theming {
 
         console.debug("Theming >> Theming.constructor >> Reverting transition changes...");
         setTimeout(function() {
-            document.querySelectorAll("*:not(#header_buttons):not(#header_buttons button)").forEach(function(element) {
+            document.querySelectorAll("*:not(header > *)").forEach(function(element) {
                 element.classList.remove("no_transition");
 
                 if (element.classList.length == 0) {
