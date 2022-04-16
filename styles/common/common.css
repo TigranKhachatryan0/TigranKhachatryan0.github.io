@@ -17,7 +17,6 @@ body {
 
     /* Font family */
     font-family: "Mardoto", "Roboto", "DejaVu Sans", "Arial Armenian", "Arial", sans-serif;
-    transition: 0.5s color linear;
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -56,7 +55,14 @@ header {
 
     user-select: none;
 
-    transition: 0.5s height ease;
+    transition: 0.5s height linear, 0.5s box-shadow linear;
+}
+
+header::after {
+    box-shadow: none;
+    opacity: 0;
+
+    transition: 0.5s box-shadow linear;
 }
 
 header > * {
@@ -86,6 +92,8 @@ header button {
 
     padding: 0.5em 1em;
     transition: 0.25s all ease;
+
+    font-weight: 500;
 }
 
 header button:hover {
@@ -121,6 +129,38 @@ main {
     animation-fill-mode: forwards;
 
     padding: 1em;
+}
+
+main > * {
+    transition: 0.5s color linear;
+}
+
+/*** Go to top button *********************************************************/
+
+#go_to_top {
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+
+    background: #fff;
+    color: #333;
+    font-size: 1.25em;
+    box-shadow: 0 0 0.5rem 0.25rem #00000050;
+
+    clip-path: circle();
+
+    cursor: pointer;
+    user-select: none;
+
+    padding: 0.5em 1em;
+    transition: 0.25s all ease;
+
+    font-weight: 500;
+}
+
+#go_to_top:hover {
+    background: #ec407a;
+    box-shadow: 0 0 0.5rem 0.25rem #00000075;
 }
 
 /*** Animations *******************************************************************/

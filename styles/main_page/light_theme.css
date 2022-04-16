@@ -13,5 +13,13 @@ main {
 
 
 .article_preview {
+    background-color: #fff;
+}
+
+.article_preview:hover {
     background-color: #eee;
+}
+
+.article_preview:active {
+    background-color: #fafafa;
 }

@@ -10,3 +10,11 @@ main {
 .article_preview {
     background-color: #212121;
 }
+
+.article_preview:hover {
+    background-color: #484848;
+}
+
+.article_preview:active {
+    background-color: #333;
+}

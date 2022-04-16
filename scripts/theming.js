@@ -72,6 +72,9 @@ class Theming {
                 parent_this.setThemeCSS("styles/" + base + "/dark_theme.css");
 
                 console.debug("Theming >> theme_button(event:click) >> Switched to dark mode!");
+                this.dark_listeners.forEach(function(listener) {
+                    listener();
+                });
             } else {
                 label.innerHTML = "ԱՐԵՒ";
                 icon.innerHTML = "light_mode";
@@ -79,6 +82,9 @@ class Theming {
                 parent_this.setThemeCSS("styles/" + base + "/light_theme.css");
 
                 console.debug("Theming >> theme_button(event:click) >> Switched to light mode!");
+                this.light_listeners.forEach(function(listener) {
+                    listener();
+                });
             }
         });
     }
@@ -114,23 +120,23 @@ class Theming {
     addThemeChangeListener(event, handler) {
         switch (event) {
             case "toLight": {
-                this.light_listeners.append(handler);
+                this.light_listeners.push(handler);
                 break;
             }
 
             case "toDark": {
-                this.dark_listeners.appendChild(handler);
+                this.dark_listeners.push(handler);
                 break;
             }
             
             case "change": {
-                this.light_listeners.appendChild(handler);
-                this.dark_listeners.appendChild(handler);
+                this.light_listeners.push(handler);
+                this.dark_listeners.push(handler);
                 break;
             }
 
             default: {
-                return new Error("Invalid event");
+                throw new Error("Invalid event");
                 break;
             }
         }
